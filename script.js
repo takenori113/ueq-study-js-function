@@ -16,7 +16,7 @@ const students = [
   },
 ];
 
-export const func1 = (students) => {
+export const func1 = () => {
   const overScoreStudents = students.filter((student) => {
     return student.score >= 50;
   });
@@ -26,7 +26,7 @@ export const func1 = (students) => {
   return overScoreStudentsNames;
 };
 
-export const func2 = (students) => {
+export const func2 = () => {
   const boys = students.filter((student) => {
     return student.gender === "male";
   });
@@ -41,11 +41,10 @@ export const func2 = (students) => {
 
 const main = () => {
   // func1の実行例
-  const result1 = func1(students);
+  const result1 = func1();
   console.log(result1);
   // func2の実行例
-  const result2 = func2(students);
+  const result2 = func2();
   console.log(result2);
 };
-
 main();
