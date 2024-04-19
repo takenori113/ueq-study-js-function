@@ -17,11 +17,26 @@ const students = [
 ];
 
 export const func1 = () => {
-  return [];
+  const overScoreStudents = students.filter((student) => {
+    return student.score >= 50;
+  });
+  const overScoreStudentsNames = overScoreStudents.map((student) => {
+    return student.name;
+  });
+  return overScoreStudentsNames;
 };
 
 export const func2 = () => {
-  return 0;
+  const boys = students.filter((student) => {
+    return student.gender === "male";
+  });
+  const boysScores = boys.map((boy) => {
+    return boy.score;
+  });
+  const boysScoresSum = boysScores.reduce((a, b) => {
+    return a + b;
+  });
+  return boysScoresSum;
 };
 
 const main = () => {
@@ -32,5 +47,4 @@ const main = () => {
   const result2 = func2();
   console.log(result2);
 };
-
 main();
